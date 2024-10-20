@@ -6,6 +6,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Anton', sans-serif;
     font-weight: 700;
     color:#003366;   
+    letter-spacing: 2px;
 }
 
 body, html {
@@ -22,11 +23,12 @@ body, html {
     grid-template-rows: auto 1fr auto; 
 }
 
-p {
+p, span {
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
     color:#003366;
     line-height: 2;
+    font-size: 1.2em;
 }
 
 hr {
@@ -43,6 +45,7 @@ hr {
     padding: 10px;
     height: 300px;
     scroll-behavior: smooth;
+    overflow: scroll;
 }
 
 

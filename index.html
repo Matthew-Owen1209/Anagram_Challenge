@@ -27,10 +27,10 @@
                 <div class="row d-flex m-0 p-0">
                     <div class="text-box rounded p-3 col-12 col-lg-6 col-xl-4 mt-3 mx-0 d-flex">
                         <p>
-                            Welcome to our anagram discovery tool! This website allows you to explore a provided dictionary and identify which word has the highest number of anagrams 
-                            within the same set of words. Anagrams are defined as words of the same length that share identical letters. Simply upload your dictionary file, 
+                            Welcome to my anagram discovery tool! This website allows you to explore a provided dictionary and identify which word has the highest number of anagrams 
+                            within the same set of words. Simply upload your dictionary file, 
                             which should contain one word per line with no punctuation or duplicates, and let our tool reveal the word with the most anagrams, along with the 
-                            complete set of corresponding anagrams. Discover the fascinating world of words today!
+                            complete set of corresponding anagrams. 
                         </p>
                     </div>
                     <div class="p-3 col-12 col-xl-5 col-lg-12 mt-3 mx-0 d-flex flex-column text-center justify-content-end">
@@ -41,14 +41,15 @@
                         </div>
                         <div class="row text-center d-flex justify-content-center m-0 p-0">
                             <div class="col-xl-9 col-12 col-lg-5 m-0 p-0">
-                                <form action="upload.php" method="post" enctype="multipart/form-data" class="d-flex flex-column w-100">
-                                    <div class="input-group mb-3">
+                                <form id="upload" method="post" enctype="multipart/form-data" class="d-flex flex-column w-100">
+                                    <input type="text" placeholder="Enter the name of your file" id="file-check">
+                                    <div class="input-group my-3">
                                         <div class="input-group-prepend">
-                                            <button class="btn btn-primary" type="button">Submit</button>
+                                            <button class="btn btn-primary" type="submit">Submit</button>
                                         </div>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="inputGroupFile03">
-                                            <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+                                            <input type="file" class="custom-file-input" id="text-file" name="text-file" required>
+                                            <label class="custom-file-label" for="text-file" id="file-name">Choose file</label>
                                         </div>
                                     </div>
                                 </form>
@@ -63,7 +64,10 @@
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center mt-5 mx-0 p-0">
-                    <div class="col-xl-8 d-flex justify-content-center align-items-center results-box rounded m-0 p-0">
+                    <div class="col-xl-8 d-flex flex-column results-box justify-content-between rounded m-0 p-3">
+                        <h5>Word with highest number of anagrams: </h5><span id="word-result"></span>
+                        <h5>Anagrams: </h5><span id="anagrams-result"></span>
+                        <h5>Anagram count: </h5><span id="count-result"></span>
                     </div>
                 </div>
             </div>
@@ -74,5 +78,6 @@
             </div>
         </footer>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
